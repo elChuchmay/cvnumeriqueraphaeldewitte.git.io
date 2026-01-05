@@ -1,12 +1,14 @@
+/* ===== Body et typographie ===== */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding-top: 60px; /* espace pour le menu fixe */
     color: #333;
     background-color: #f4f4f4;
 }
 
+/* ===== Header ===== */
 header {
     background-color: #2c3e50;
     color: #fff;
@@ -15,15 +17,17 @@ header {
 }
 
 header h1 {
-    margin: 0;
+    margin: 0.5rem 0 0;
     font-size: 2.5rem;
 }
 
 header p {
-    font-size: 1.2rem;
     margin: 0.5rem 0 0;
+    font-size: 1.2rem;
 }
 
+
+/* ===== Sections ===== */
 section {
     max-width: 800px;
     margin: 2rem auto;
@@ -40,18 +44,18 @@ h2 {
 }
 
 ul {
-    list-style-type: disc;
     margin-left: 1.5rem;
 }
 
-.project {
-    margin-bottom: 2rem;
+/* ===== Images adaptatives ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
 }
 
-.project h3 {
-    color: #3498db;
-}
-
+/* ===== Footer ===== */
 footer {
     text-align: center;
     padding: 1rem;
@@ -60,6 +64,48 @@ footer {
     margin-top: 2rem;
 }
 
+/* ===== Barre de menu ===== */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#menu li {
+    margin: 0 15px;
+}
+
+#menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* ===== Contact sans puces ===== */
+#contact ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 600px) {
     header h1 {
         font-size: 2rem;
@@ -68,4 +114,16 @@ footer {
         margin: 1rem;
         padding: 0.5rem;
     }
+    #menu ul {
+        flex-direction: column;
+    }
+    #menu li {
+        margin: 5px 0;
+    }
+}
+
+/* juste afficher l'image, centré grâce à text-align du parent */
+header img {
+    display: inline-block; /* pas de block inutile */
+    margin-bottom: 15px;   /* espace entre l'image et le texte */
 }
